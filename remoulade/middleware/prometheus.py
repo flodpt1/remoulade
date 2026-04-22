@@ -180,7 +180,7 @@ class Prometheus(Middleware):
     def before_process_message(self, broker, message):
         self.message_start_times[message.message_id] = time.monotonic() * 1000
         self.message_time_in_queue.labels(*self._get_labels(broker, message)).observe(
-            current_millis() - message.message_timestamp
+            max(current_millis() - message.message_timestamp, 0)
         )
         self.worker_busy.set(1)
 

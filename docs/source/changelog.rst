@@ -5,6 +5,12 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+`5.1.1`_ -- 2026-04-20
+------------
+Feat
+^^^^
+* Fix remoulade_message_time_in_queue_milliseconds prometheus metric to make sure it is monotonically increasing
+
 `5.1.0`_ -- 2026-03-03
 ------------
 Feat
